@@ -1,4 +1,4 @@
-# Welcome to the Tweedr API, VERSION 2.0!!
+# Welcome to the Tweedr API!!
 
 To get the Tweedr API set up, you know the drill.
 

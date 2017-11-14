@@ -4,6 +4,8 @@ Let's make a cool new app called TWEEDR!! Not Twitter, geez...
 
 An Express backend has already been provided for you, because we love you all very much. You will just need to create a React frontend for it. (You shouldn't need to modify anything in the Express backend, except to connect the React frontend. The model, controllers, etc. are all set up already.)
 
+## [Read this](./tweedr) for setup instructions and API documentation!
+
 ### Wireframe!
 
 ![tweedr](./assets/tweedr.png)
