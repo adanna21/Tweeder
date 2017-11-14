@@ -2,6 +2,6 @@
 
 CREATE TABLE IF NOT EXISTS tweeds (
   id BIGSERIAL PRIMARY KEY,
-  tweed_text VARCHAR(1024),
+  tweed VARCHAR(1024),
   tweed_time BIGINT
 );
