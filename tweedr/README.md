@@ -32,22 +32,22 @@ Returns all tweeds in database.
     "tweeds": [
       {
         "id": "1",
-        "tweed_text": "Hello World!",
+        "tweed": "Hello World!",
         "tweed_time": "1494788500041"
       },
       {
         "id": "2",
-        "tweed_text": "I love using Tweedr... so much better than twitter.",
+        "tweed": "I love using Tweedr... so much better than twitter.",
         "tweed_time": "1494788543350"
       },
       {
         "id": "3",
-        "tweed_text": "React is the best!",
+        "tweed": "React is the best!",
         "tweed_time": "1494788564011"
       },
       {
         "id": "4",
-        "tweed_text": "testing tweed upload",
+        "tweed": "testing tweed upload",
         "tweed_time": "1494792188509"
       }
     ]
@@ -65,7 +65,7 @@ Returns information about one specific tweed.
   "data": {
     "tweed": {
       "id": "1",
-      "tweed_text": "Hello World!",
+      "tweed": "Hello World!",
       "tweed_time": "1494788500041"
     }
   }
@@ -84,7 +84,7 @@ A sample response looks like this:
   "data": {
     "tweed": {
       "id": "5",
-      "tweed_text": "makin that tweed",
+      "tweed": "makin that tweed",
       "tweed_time": "1494793073028"
     }
   }
@@ -105,7 +105,7 @@ A sample response looks like this:
   "data": {
     "tweed": {
       "id": "5",
-      "tweed_text": "this tweed has been edited",
+      "tweed": "this tweed has been edited",
       "tweed_time": "1494793073028"
     }
   }
