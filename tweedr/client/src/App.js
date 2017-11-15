@@ -8,7 +8,8 @@ class App extends Component {
     super(props);
     this.state = {
       apiDataLoaded: false,
-      tweedList: null,
+      tweedData: null,
+      tweedClicked: false,
     }
   }
 
@@ -17,10 +18,16 @@ class App extends Component {
       .then(res => res.json())
       .then(res => {
         this.setState({
-          tweedList: res.data.tweeds,
+          tweedData: res.data.tweeds,
           apiDataLoaded: true,
         });
       }).catch(err => console.log(err));
+  }
+
+  renderEditForm () {
+    this.setState({
+      tweedClicked: true,
+    })
   }
 
   render() {
@@ -30,8 +37,14 @@ class App extends Component {
           <h1 className="App-title">TWEEDER</h1>
           <p>What Ya Thinking?</p>
         </header>
-        <AddForm />
-        <TweedrFeed />
+        <AddForm
+          apiDataLoaded={this.state.apiDataLoaded}
+          />
+        <TweedrFeed
+          apiDataLoaded={this.state.apiDataLoaded}
+          tweedData={this.state.tweedData}
+          tweedClicked={this.state.tweedClicked}
+          />
       </div>
     );
   }

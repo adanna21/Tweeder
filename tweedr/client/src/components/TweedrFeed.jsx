@@ -1,10 +1,14 @@
 import React from 'react';
-import EditForm from './EditForm';
+import Tweed from './Tweed'
 
 function TweedrFeed (props) {
   return (
     <section>
-
+      <Tweed
+        apiDataLoaded={props.apiDataLoaded}
+        tweedList={props.tweedList}
+        tweedClicked={props.tweedClicked}
+        />
     </section>
   )
 }
