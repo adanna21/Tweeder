@@ -2,15 +2,35 @@ import React from 'react';
 import Tweed from './Tweed'
 
 function TweedrFeed (props) {
-  return (
-    <section>
-      <Tweed
-        apiDataLoaded={props.apiDataLoaded}
-        tweedList={props.tweedList}
-        tweedClicked={props.tweedClicked}
-        />
-    </section>
-  )
+      if (props.apiDataLoaded) {
+        return (
+          <section>
+
+              {props.tweedData.map(tweed => {
+                return (
+                  <Tweed
+                    tweed={tweed}
+                    apiDataLoaded={props.apiDataLoaded}
+                    selectedTweed={props.selectedTweed}
+                    tweedData={props.tweedData}
+                    tweedClicked={props.tweedClicked}
+                    getTweedId={props.getTweedId}
+                    renderEditForm={props.renderEditForm}
+                    handleInputChange={props.handleInputChange}
+                    handleSubmit={props.handleSubmit}
+                    handleEditSubmit={props.handleEditSubmit}
+                    />
+                )
+              })}
+          </section>
+        )
+    }else {
+        return (
+          <section>
+            <p>loading...</p>
+          </section>
+        )
+      }
 }
 
 
