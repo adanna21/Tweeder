@@ -7,10 +7,21 @@ html {
   height: 100%;
   width: 100%;
   background-color: #663ab7;
-  /*background: url('/images/influencer-marketing-header.jpg');*/
+  background: url('/images/package.jpg');
   background-attachment: fixed;
   background-size: cover;
-  background: linear-gradient(#663ab7, #01bcd5);
+  /*background: linear-gradient(#663ab7, #01bcd5);*/
+}
+button {
+  cursor: pointer;
+  font-family: 'Nunito', sans-serif;
+  border: none;
+  background-color: white;
+  font-size: .8em;
+}
+button:hover {
+  background-color: #5ACBE3;
+  color: #fff;
 }
 .App {
   text-align: center;
@@ -25,18 +36,17 @@ header {
   flex: .8;
   padding: 23px 0 5px 0;
   width: 100vw;
-  color: white;
+  color: #fff;
   text-shadow:  0 5px 3px gray;
   font-size: 2em;
 }
-.fa-comment {
+.fa-commenting {
   vertical-align: top;
   font-size: .9em;
 }
 
 /*ADD PAGE*/
 .add-tweed {
-  /*background-color: green;*/
   flex: 1;
   width: 100vw;
   display: flex;
@@ -56,7 +66,6 @@ header {
 }
 .add-form input {
   font-size: .9em;
-  /*height: 7vh;*/
   border-radius: 14px;
   border: none;
   margin-right: 15px;
@@ -64,25 +73,33 @@ header {
   width: 40vw;
   font-family: 'Nunito', sans-serif;
   font-weight: 300;
+  box-shadow: inset 2px 2px 2px gray;
   /*border: 5px solid #e9ebee;*/
   /*box-shadow: inset 1px 0px 3px gray;*/
 }
-.add-form button {
+.add-btn {
   font-size: .8em;
   border: none;
   background-color: white;
-  font-family: 'Nunito', sans-serif;
 }
+.add-btn:hover {
+  background-color: #5ACBE3;
+  color: white;
+}
+
 section {
-  /*background-color: yellow;*/
   flex: 5;
   display: flex;
   justify-content: center;
   width:  100vw;
 }
+section h2 {
+  font-weight: 300;
+}
 .tweed-container {
-  background-color: #F7BFB4;
+  background-color: #E6E6EA;
   width: 50vw;
+  height: 64vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -107,6 +124,9 @@ section {
   width: 40vw;
   height: 5vh;
   border: none;
+  /*box-shadow: inset 2px 2px 2px gray;*/
+  border-radius: 6px;
+  background-color: #f6f7f9;
 }
 .fa-clock-o {
   padding: 0 10px 0 0px;
@@ -117,11 +137,11 @@ section {
   cursor: pointer;
 }
 .fa-pencil:hover {
-  color: white;
+  color: #5ACBE3;
 }
 .delete {
   margin: 0 10px 0 10px;
 }
-.cancel-btn {
-  display: inline;
+.cancel {
+  float: right;
 }

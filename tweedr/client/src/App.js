@@ -98,7 +98,7 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <h1 className="App-title"> <i className="fa fa-comment fa-flip-horizontal" aria-hidden="true"></i>TWEEDER</h1>
+          <h1 className="App-title"> <i className="fa fa-commenting fa-flip-horizontal" aria-hidden="true"></i>TWEEDR</h1>
         </header>
         <AddForm
           handleInputChange={this.handleInputChange}
