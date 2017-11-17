@@ -79,7 +79,7 @@ class Tweed extends Component {
 
         <div className="tweed" key={this.props.tweed.id} >
           {this.state.isClicked ?
-              <div>
+              <div className="t">
                 <EditForm
                   getTweedId={this.props.getTweedId}
                   selectedTweed={this.state.selectedTweed}
@@ -88,17 +88,17 @@ class Tweed extends Component {
                   handleEditSubmit={this.props.handleEditSubmit}
                   tweed={this.props.tweed}
                 />
-                <button onClick={() => this.cancel()}>Cancel</button>
+              <button className="cancel-btn" onClick={() => this.cancel()}>Cancel</button>
               </div>
           :
-            <div className="tweed" key={this.props.tweed.id} >
+            <div className="t" key={this.props.tweed.id} >
               <h3>
                 {this.props.tweed.tweed}
-                <i className="fa fa-pencil" onClick={() => this.getTweedId(this.props.tweed.id)}></i>
               </h3>
               <p>
                 <i className="fa fa-clock-o" aria-hidden="true"></i>
-                {new Date(this.props.tweed.tweed_time * 1000).toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})}
+                {new Date(this.props.tweed.tweed_time * 1000).toLocaleTimeString([], {month: 'long', day: 'numeric', hour: '2-digit', minute:'2-digit'})}
+                <i className="fa fa-pencil" onClick={() => this.getTweedId(this.props.tweed.id)}></i>
               </p>
             </div>
           }

@@ -10,7 +10,7 @@ html {
   /*background: url('/images/influencer-marketing-header.jpg');*/
   background-attachment: fixed;
   background-size: cover;
-  /*background: linear-gradient(#663ab7, #01bcd5);*/
+  background: linear-gradient(#663ab7, #01bcd5);
 }
 .App {
   text-align: center;
@@ -22,16 +22,12 @@ html {
 }
 header {
   font-family: 'Lobster', cursive;
-  background-color: blue;
   flex: .8;
-  padding: 20px;
+  padding: 23px 0 5px 0;
   width: 100vw;
-}
-header h1 {
-  font-size: 2.5em;
-}
-header p {
-  padding-top: 10px;
+  color: white;
+  text-shadow:  0 5px 3px gray;
+  font-size: 2em;
 }
 .fa-comment {
   vertical-align: top;
@@ -40,7 +36,7 @@ header p {
 
 /*ADD PAGE*/
 .add-tweed {
-  background-color: green;
+  /*background-color: green;*/
   flex: 1;
   width: 100vw;
   display: flex;
@@ -48,39 +44,84 @@ header p {
   align-items: center;
 }
 .add-form {
-  background-color: red;
+  background-color: #BDCDD7;
   font-size: 1.7em;
-  width: 40vw;
+  width: 50vw;
   height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-}
-.add-form input {
-  font-size: 1em;
-  height:;
-  border-radius: 6px;
-  border: .5px solid #e9ebee;
+  /*box-shadow: 0 13px 3px gray;*/
 
 }
+.add-form input {
+  font-size: .9em;
+  /*height: 7vh;*/
+  border-radius: 14px;
+  border: none;
+  margin-right: 15px;
+  padding-left: 10px;
+  width: 40vw;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 300;
+  /*border: 5px solid #e9ebee;*/
+  /*box-shadow: inset 1px 0px 3px gray;*/
+}
 .add-form button {
-  font-size: 1em;
+  font-size: .8em;
+  border: none;
   background-color: white;
+  font-family: 'Nunito', sans-serif;
 }
 section {
-  /*border: 2px solid black;*/
-  background-color: yellow;
+  /*background-color: yellow;*/
   flex: 5;
   display: flex;
   justify-content: center;
   width:  100vw;
 }
 .tweed-container {
-  background-color: gold;
-  width: 40vw;
+  background-color: #F7BFB4;
+  width: 50vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-y: scroll;
 }
 .tweed{
   border: 1px solid black;
-  background-color: green;
-  /*width: 500px;*/
+  background-color: white;
+  width: 45vw;
+  height: 200px;
+  margin-bottom: 10px;
+  padding: 5px 0 10px 10px;
+  /*padding-top: 5px;*/
+  border-radius: 7px;
+  border: none;
+  box-shadow: 0 1px 3px gray;
+  text-align: left;
+}
+.tweed input {
+  padding-left: 5px;
+  font-size: 1em;
+  width: 40vw;
+  height: 5vh;
+  border: none;
+}
+.fa-clock-o {
+  padding: 0 10px 0 0px;
+}
+.fa-pencil {
+  padding: 0 10px 0 10px;
+  font-size: 1.7em;
+  cursor: pointer;
+}
+.fa-pencil:hover {
+  color: white;
+}
+.delete {
+  margin: 0 10px 0 10px;
+}
+.cancel-btn {
+  display: inline;
 }
