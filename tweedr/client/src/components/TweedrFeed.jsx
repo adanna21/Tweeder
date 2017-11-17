@@ -20,7 +20,7 @@ function TweedrFeed (props) {
                     getTweedId={props.getTweedId}
                     renderEditForm={props.renderEditForm}
                     handleInputChange={props.handleInputChange}
-                    handleSubmit={props.handleSubmit}
+                    handleEditSubmit={props.handleEditSubmit}
                     />
                 )
               })}

@@ -64,6 +64,7 @@ class Tweed extends Component {
                   cancel={this.cancel}
                   handleEditInputChange={this.handleEditInputChange}
                   tweed={this.props.tweed}
+                  handleEditSubmit={this.props.handleEditSubmit}
                 />
               <button className="cancel-btn" onClick={() => this.cancel()}>Cancel</button>
               </div>

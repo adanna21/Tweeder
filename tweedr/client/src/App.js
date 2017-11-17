@@ -18,7 +18,6 @@ class App extends Component {
     this.handleEditSubmit = this.handleEditSubmit.bind(this);
   }
 
-  //fetches data from express api
   componentDidMount () {
     fetch('/api/tweeds')
       .then(res => res.json())
@@ -85,12 +84,12 @@ class App extends Component {
         },
         body: JSON.stringify(tweed)
       })
-      .then(res => res.json())
+      .then(res => res)
       .then(json => {
         console.log(json)
-        this.setState({
-          selectedTweed: json.data.tweed,
-        })
+      })
+      this.setState({
+        onSuccess: true,
       })
   }
 
@@ -112,6 +111,7 @@ class App extends Component {
           tweedClicked={this.state.tweedClicked}
           renderEditForm={this.renderEditForm}
           handleInputChange={this.handleInputChange}
+          handleEditSubmit={this.handleEditSubmit}
           />
       </div>
     );
