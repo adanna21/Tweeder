@@ -7,6 +7,7 @@ html {
   height: 100%;
   width: 100%;
   background-color: #663ab7;
+  /*image from https://www.tech2success.com/7-ways-improve-client-communication*/
   background: url('/images/package.jpg');
   background-attachment: fixed;
   background-size: cover;
@@ -61,7 +62,7 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-  /*box-shadow: 0 13px 3px gray;*/
+  min-width: 300px;
 
 }
 .add-form input {
@@ -74,13 +75,13 @@ header {
   font-family: 'Nunito', sans-serif;
   font-weight: 300;
   box-shadow: inset 2px 2px 2px gray;
-  /*border: 5px solid #e9ebee;*/
-  /*box-shadow: inset 1px 0px 3px gray;*/
+  min-width: 180px;
 }
 .add-btn {
   font-size: .8em;
   border: none;
   background-color: white;
+  min-width: 40px;
 }
 .add-btn:hover {
   background-color: #5ACBE3;
@@ -104,6 +105,7 @@ section h2 {
   flex-direction: column;
   align-items: center;
   overflow-y: scroll;
+  min-width: 300px;
 }
 .tweed{
   border: 1px solid black;
@@ -112,7 +114,7 @@ section h2 {
   height: 200px;
   margin-bottom: 10px;
   padding: 5px 0 10px 10px;
-  /*padding-top: 5px;*/
+  min-width: 250px;
   border-radius: 7px;
   border: none;
   box-shadow: 0 1px 3px gray;
@@ -127,6 +129,7 @@ section h2 {
   /*box-shadow: inset 2px 2px 2px gray;*/
   border-radius: 6px;
   background-color: #f6f7f9;
+  min-width: 220px;
 }
 .fa-clock-o {
   padding: 0 10px 0 0px;

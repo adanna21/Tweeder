@@ -8,7 +8,6 @@ class Tweed extends Component {
     super(props);
     this.state = {
       isClicked: false,
-      onSuccess: false,
       selectedTweed: {},
     }
     // this.changeIsClicked = this.changeIsClicked.bind(this)
@@ -52,32 +51,11 @@ class Tweed extends Component {
     console.log(this.state.selectedTweed);
   }
 
-  // //creates a put or delete request based on method in argument
-  // handleEditSubmit(e, method, tweed) {
-  //   // e.preventDefault();
-  //   console.log(tweed.id);
-  //     fetch(`/api/tweeds/${tweed.id}`, {
-  //       method: method,
-  //       headers: {
-  //         'Accept': 'application/json, text/plain, */*',
-  //         'Content-Type': 'application/json'
-  //       },
-  //       body: JSON.stringify(tweed)
-  //     })
-  //     .then(res => res)
-  //     .then(json => {
-  //       console.log(json)
-  //     })
-  //     this.setState({
-  //       onSuccess: true,
-  //     })
-  // }
-
 
   render () {
     return (
 
-        <div className="tweed" key={this.props.tweed.id} >
+        <div className="tweed">
           {this.state.isClicked ?
               <div className="t">
                 <EditForm
@@ -85,13 +63,12 @@ class Tweed extends Component {
                   selectedTweed={this.state.selectedTweed}
                   cancel={this.cancel}
                   handleEditInputChange={this.handleEditInputChange}
-                  handleEditSubmit={this.props.handleEditSubmit}
                   tweed={this.props.tweed}
                 />
               <button className="cancel-btn" onClick={() => this.cancel()}>Cancel</button>
               </div>
           :
-            <div className="t" key={this.props.tweed.id} >
+            <div className="t" >
               <h3>
                 {this.props.tweed.tweed}
               </h3>

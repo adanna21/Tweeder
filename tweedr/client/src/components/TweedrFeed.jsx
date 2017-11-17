@@ -21,7 +21,6 @@ function TweedrFeed (props) {
                     renderEditForm={props.renderEditForm}
                     handleInputChange={props.handleInputChange}
                     handleSubmit={props.handleSubmit}
-                    handleEditSubmit={props.handleEditSubmit}
                     />
                 )
               })}
