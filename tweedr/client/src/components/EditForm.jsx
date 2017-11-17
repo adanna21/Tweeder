@@ -5,8 +5,8 @@ function EditForm (props) {
     return (
         <form onChange={(e) => props.handleEditInputChange(e)} >
           <input type="text" name="tweed" defaultValue={props.tweed.tweed} />
-          <button onClick={(e) => props.handleSubmit(e, 'PUT', props.tweed.id)}>Submit</button>
-          <button onClick={(e) => props.handleSubmit(e, 'DELETE', props.selectedTweed.id)}>X</button>
+          <button onClick={(e) => props.handleEditSubmit(e, 'PUT', props.selectedTweed)}>Submit</button>
+          <button onClick={(e) => props.handleEditSubmit(e, 'DELETE', props.selectedTweed)}>X</button>
         </form>
     )
 }

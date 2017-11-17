@@ -6,9 +6,12 @@ function TweedrFeed (props) {
         return (
           <section>
 
+            <div className="tweed-container">
+              <h2>Tweedr Feed</h2>
               {props.tweedData.map(tweed => {
                 return (
                   <Tweed
+                    key={tweed.id}
                     tweed={tweed}
                     apiDataLoaded={props.apiDataLoaded}
                     selectedTweed={props.selectedTweed}
@@ -22,6 +25,7 @@ function TweedrFeed (props) {
                     />
                 )
               })}
+            </div>
           </section>
         )
     }else {

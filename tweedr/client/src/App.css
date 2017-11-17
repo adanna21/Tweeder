@@ -1,12 +1,86 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+html {
+  margin: 0 auto;
+  height: 100%;
+  width: 100%;
+  background-color: #663ab7;
+  /*background: url('/images/influencer-marketing-header.jpg');*/
+  background-attachment: fixed;
+  background-size: cover;
+  /*background: linear-gradient(#663ab7, #01bcd5);*/
+}
 .App {
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
+  font-family: 'Nunito', sans-serif;
 }
 header {
+  font-family: 'Lobster', cursive;
+  background-color: blue;
+  flex: .8;
+  padding: 20px;
+  width: 100vw;
+}
+header h1 {
+  font-size: 2.5em;
+}
+header p {
+  padding-top: 10px;
+}
+.fa-comment {
+  vertical-align: top;
+  font-size: .9em;
+}
+
+/*ADD PAGE*/
+.add-tweed {
+  background-color: green;
+  flex: 1;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.add-form {
+  background-color: red;
+  font-size: 1.7em;
+  width: 40vw;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.add-form input {
+  font-size: 1em;
+  height:;
+  border-radius: 6px;
+  border: .5px solid #e9ebee;
 
 }
+.add-form button {
+  font-size: 1em;
+  background-color: white;
+}
 section {
-  border: 2px solid black;
+  /*border: 2px solid black;*/
+  background-color: yellow;
+  flex: 5;
+  display: flex;
+  justify-content: center;
+  width:  100vw;
+}
+.tweed-container {
+  background-color: gold;
+  width: 40vw;
 }
 .tweed{
   border: 1px solid black;
+  background-color: green;
+  /*width: 500px;*/
 }

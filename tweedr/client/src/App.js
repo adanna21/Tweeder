@@ -10,13 +10,13 @@ class App extends Component {
       apiDataLoaded: false,
       tweedData: null,
       tweedClicked: false,
-      selectedTweed: {},
+      tweed: '',
+      onSuccess: false,
     }
     this.renderEditForm = this.renderEditForm.bind(this);
-    // this.getTweedId = this.getTweedId.bind(this);
     this.handleInputChange = this.handleInputChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
     this.handlePostSubmit = this.handlePostSubmit.bind(this);
+    this.handleEditSubmit = this.handleEditSubmit.bind(this);
   }
 
   componentDidMount () {
@@ -39,28 +39,16 @@ class App extends Component {
     })
   }
 
-  // // sets the object contained selected tweed
-  // getTweedId (id) {
-  //   const tweed = this.state.tweedData.find(tweed => {
-  //     return tweed.id === id
-  //   }) || {}
-  //   console.log(tweed);
-  //   this.setState({
-  //     selectedTweed: tweed,
-  //   })
-  // }
-
   //handles change on main tweed post
   handleInputChange (e) {
-    const name = e.target.name;
+    // const name = e.target.name;
     const value = e.target.value;
     console.log(e.target.value);
     this.setState((prevState, props) => {
       return {
-        selectedTweed: Object.assign({}, prevState.selectedTweed, {[name] : value})
+        tweed: value
       }
     })
-    console.log(this.state.selectedTweed);
   }
 
   handlePostSubmit(e, tweed) {
@@ -71,21 +59,26 @@ class App extends Component {
         // 'Accept': 'application/json, text/plain, */*',
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify(tweed)
+      body: JSON.stringify({tweed: tweed})
     })
-    .then(res => res)
+    .then(res => res.json())
     .then(json => {
       console.log(json)
-      this.getTweedId(tweed.id)
+      this.setState((prevState, props) => {
+        return {
+          tweedData: prevState.tweedData.concat(json.data.tweed),
+          tweed: ''
+        }
+      })
     })
   }
 
-  handleSubmit(e, method, tweed) {
-    e.preventDefault();
-    // const pathId = tweed.id ? `/${tweed.id}` : ''
+  //creates a put or delete request based on method in argument
+  handleEditSubmit(e, method, tweed) {
+    // e.preventDefault();
     console.log(tweed.id);
       fetch(`/api/tweeds/${tweed.id}`, {
-        method: method === 'PUT' ? 'PUT' : 'POST',
+        method: method,
         headers: {
           'Accept': 'application/json, text/plain, */*',
           'Content-Type': 'application/json'
@@ -95,7 +88,9 @@ class App extends Component {
       .then(res => res)
       .then(json => {
         console.log(json)
-        this.getTweedId(tweed.id)
+      })
+      this.setState({
+        onSuccess: true,
       })
   }
 
@@ -103,23 +98,21 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <h1 className="App-title">TWEEDER</h1>
-          <p>What Ya Thinking?</p>
+          <h1 className="App-title"> <i className="fa fa-comment fa-flip-horizontal" aria-hidden="true"></i>TWEEDER</h1>
         </header>
         <AddForm
           handleInputChange={this.handleInputChange}
           handlePostSubmit={this.handlePostSubmit}
-          selectedTweed={this.state.selectedTweed}
+          tweed={this.state.tweed}
           />
         <TweedrFeed
           apiDataLoaded={this.state.apiDataLoaded}
           selectedTweed={this.state.selectedTweed}
           tweedData={this.state.tweedData}
           tweedClicked={this.state.tweedClicked}
-          getTweedId={this.getTweedId}
           renderEditForm={this.renderEditForm}
           handleInputChange={this.handleInputChange}
-          handleSubmit={this.handleSubmit}
+          handleEditSubmit={this.handleEditSubmit}
           />
       </div>
     );
