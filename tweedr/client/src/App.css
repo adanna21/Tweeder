@@ -102,7 +102,7 @@ section h2 {
   width: 50vw;
   height: 64vh;
   display: flex;
-  flex-direction: column;
+  flex-direction: column-reverse;
   align-items: center;
   overflow-y: scroll;
   min-width: 300px;

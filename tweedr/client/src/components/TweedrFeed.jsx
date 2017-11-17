@@ -7,7 +7,6 @@ function TweedrFeed (props) {
           <section>
 
             <div className="tweed-container">
-              <h2>Tweedr Feed</h2>
               {props.tweedData.map(tweed => {
                 return (
                   <Tweed
@@ -24,6 +23,7 @@ function TweedrFeed (props) {
                     />
                 )
               })}
+              <h2>Tweedr Feed</h2>
             </div>
           </section>
         )
