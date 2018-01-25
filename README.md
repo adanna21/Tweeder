@@ -1,50 +1,126 @@
-# HOMEWORK: Tweedr!!!
+# Welcome to the Tweedr API!!
 
-Let's make a cool new app called TWEEDR!! Not Twitter, geez...
+To get the Tweedr API set up, you know the drill.
 
-An Express backend has already been provided for you, because we love you all very much. You will just need to create a React frontend for it. (You shouldn't need to modify anything in the Express backend, except to connect the React frontend. The model, controllers, etc. are all set up already.)
+- Install dependencies
+- Create database (`tweedr_dev`)
+- Run seed & migration
+- Start the server!
 
-## [Read this](./tweedr) for setup instructions and API documentation!
+## Connecting Tweedr 2.0 to React
 
-### Wireframe!
+1. Run `createdb tweedr_dev` from the terminal. This will create the database that the tweedr express app is set up to use.
+2. Run `psql -d tweedr_dev -f migration_05192017.sql` from migration directory of the `tweedr` Express app.
+3. Run `psql -d tweedr_dev -f seed.sql` from the seed directory of the `tweedr` Express app.
+4. From `tweedr` directory, which is the Express app, run `yarn install`.
+5. From the `tweedr` directory, run `create-react-app client`. This will create a new directory `client` with a react app in it. (It's convention to name the front-end portion of a full-stack build `client`.)
+6. In `tweedr/client/package.json` add `  "proxy": "http://localhost:3001/"` to line 18. Make sure the line above it has a comma!
+7. Now, when you want to begin hacking, run `yarn start` from the `tweedr` directory to start the Express app, and run `yarn start` from the `tweedr/client` directory (in a new terminal tab) to start the React app.
 
-![tweedr](./assets/tweedr.png)
+Happy hacking!
 
-### Description
+## Endpoints
 
-- When the app loads, 
-    - all the tweeds in the database are loaded.
-- When a tweed is typed into the input bar, 
-    - and the submit button is clicked, 
-    - that tweed is created in the database
-    - and the tweedlist is rerendered on the page.
-- When an individual tweed is clicked,
-    - it becomes editable (maybe a `Tweed` component is swapped out with an `EditForm` component? 🤔)
-    - And when the edited tweed is submitted,
-        - a `PUT` request is made to the express app
-        - and the tweedlist is rerendered on the page to reflect the changes
-- When the `X` next to each tweed is clicked,
-    - the tweed is deleted
-    - and the tweedlist is rerendered on the page to reflect the changes.
+### GET `/api/tweeds`
 
-## 🚀 Completion looks like:
+Returns all tweeds in database.
 
-Your React/Express app should:
+```json
+{
+"message": "ok",
+  "data": {
+    "tweeds": [
+      {
+        "id": "1",
+        "tweed": "Hello World!",
+        "tweed_time": "1494788500041"
+      },
+      {
+        "id": "2",
+        "tweed": "I love using Tweedr... so much better than twitter.",
+        "tweed_time": "1494788543350"
+      },
+      {
+        "id": "3",
+        "tweed": "React is the best!",
+        "tweed_time": "1494788564011"
+      },
+      {
+        "id": "4",
+        "tweed": "testing tweed upload",
+        "tweed_time": "1494792188509"
+      }
+    ]
+  }
+}
+```
 
-- Take an input of a Tweed
-- Render all the Tweeds from the database into the browser
-- Accomplish this with at least five components, possibly more:
-    - `App`: holds calls to the database
-    - `AddForm`: will take a text input and allow it to be submitted into the database
-    - `TweedrFeed`: Holds Tweed components, which reflect the information in the database
-    - `Tweed`: Holds one individual tweed
-    - `EditForm`: Has a prepopulated text field with the value of the individual tweed
+### GET `/api/tweeds/:id`
 
-Any other components you see fit!
+Returns information about one specific tweed.
 
-## 🚀 Your homework submission should include:
+```json
+{
+  "message": "ok",
+  "data": {
+    "tweed": {
+      "id": "1",
+      "tweed": "Hello World!",
+      "tweed_time": "1494788500041"
+    }
+  }
+}
+```
 
-- A pull request created on _this repo_.
-- Completion, comfort, wins, losses, questions... you know the drill.
+### POST `/api/tweeds`
 
-## This homework is due 🚨 11PM ON THURSDAY NIGHT 🚨
+Adds a tweed to the database. Request body **must include** a `tweed` property.
+
+A sample response looks like this:
+
+```json
+{
+  "message": "ok",
+  "data": {
+    "tweed": {
+      "id": "5",
+      "tweed": "makin that tweed",
+      "tweed_time": "1494793073028"
+    }
+  }
+}
+```
+
+(The time is created in the controller.)
+
+### PUT `/api/tweeds/:id`
+
+Edits a tweed in the database, based on that tweed's ID in the database. Request body **must include** a `tweed` property.
+
+A sample response looks like this:
+
+```json
+{
+  "message": "ok",
+  "data": {
+    "tweed": {
+      "id": "5",
+      "tweed": "this tweed has been edited",
+      "tweed_time": "1494793073028"
+    }
+  }
+}
+```
+
+
+### DELETE `/api/tweeds/:id`
+
+Remove a tweed from the database, based on that tweed's ID in the database.
+
+The response looks like this:
+
+```json
+{
+  "message": "tweed deleted"
+}
+```
