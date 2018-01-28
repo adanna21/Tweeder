@@ -17,6 +17,8 @@ To get the Tweedr API set up, you know the drill.
 6. In `tweedr/client/package.json` add `  "proxy": "http://localhost:3001/"` to line 18. Make sure the line above it has a comma!
 7. Now, when you want to begin hacking, run `yarn start` from the `tweedr` directory to start the Express app, and run `yarn start` from the `tweedr/client` directory (in a new terminal tab) to start the React app.
 
+8. Don't forget to run the server and client at the same time. 
+
 Happy hacking!
 
 ## Endpoints
