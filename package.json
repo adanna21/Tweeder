@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
+  "repository": "git.generalassemb.ly/adanna21/HW_U03_D08_Tweedr.git",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon server.js",
@@ -10,7 +11,7 @@
     "heroku-postbuild": "cd client && yarn --production=false && yarn run build",
     "debugger": "DEBUG=*:* nodemon server.js"
   },
-  "author": "",
+  "author":  "Adanna Omatu <adaomatu@gmail.com>",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.17.2",

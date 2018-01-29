@@ -11,7 +11,6 @@ app.listen(PORT, function() {
   console.log(`listening on port ${PORT}`);
 });
 
-
 /* setting up logger */
 app.use(logger('dev'));
 /* setting up body parser */
@@ -20,6 +19,10 @@ app.use(bodyParser.urlencoded({extended: false}));
 
 /* setting routes */
 /* ====================== INDEX ROUTE ========= */
+// add routes
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
+});
 
 /* tweeds API route */
 const tweedRoutes = require('./routes/tweedroutes');
