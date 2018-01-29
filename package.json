@@ -7,8 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon server.js",
     "start": "node server.js",
-    "debugger": "DEBUG=*:* nodemon server.js",
-    "deploy": "cd client && yarn build && cp -a ./build/ ../public/"
+    "heroku-postbuild": "cd client && yarn --production=false && yarn run build",
+    "debugger": "DEBUG=*:* nodemon server.js"
   },
   "author": "",
   "license": "ISC",
